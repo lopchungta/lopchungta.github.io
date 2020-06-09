@@ -1,0 +1,60 @@
+body {
+	/*background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/04/23/37/625834265090081.jpg);*/
+	 /* không lặp lại hình (repeat or no-repeat) */
+	background-repeat: no-repeat; 	
+	/* cover - bao bọc */
+	background-size: cover;
+	/* img cố định */
+	background-attachment: fixed;
+	margin: 0;
+	padding: 0;
+}
+
+/* header */
+	.header {padding: 10px 10px; background-color: black; height: 50px;}
+	.lop-right {font-size: 20px; color: white; font-family: 'Pacifico', cursive; margin-left: 10px;}
+
+/* content */
+	.spandemnguoc {
+		font-family: 'Roboto Slab', serif;
+		text-align: center;
+		padding: 5px; 
+	}
+
+/* time */
+		.time{
+			padding: 5px 5px;
+			/*background-color: #F563E4;*/
+			/*border-radius: 30px;*/
+			/*border: 1px solid #F563E4;*/
+			text-transform: uppercase;
+			width: 90%;
+			display: flex;
+			justify-content: center;
+		}
+		.middle{
+			margin-top: 80px;
+			padding: 10px;
+			color: black;
+			margin: auto;
+			text-align: center;
+		}
+		.middle span {
+			-webkit-text-stroke-width: 1px;
+  			-webkit-text-stroke-color: black;
+		}
+		.time span{padding: 0 14px; font-size: 10px;}
+		.time span div{font-size: 40px;}
+
+/* Carousel Item Img*/
+#carouselExampleIndicators {
+	margin-right: auto;
+	margin-left: auto;
+	width: 600px;
+}
+.carousel-item img {
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	padding: 0px 8px;
+}
