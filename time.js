@@ -1,4 +1,4 @@
-var comingdate = new Date("Jun 22, 2020 00:00:00");
+var comingdate = new Date("Aug 08, 2020 07:00:00");
 
 var d = document.getElementById('d');
 var h = document.getElementById('h');
