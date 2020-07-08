@@ -44,13 +44,27 @@
 					var dtb12 = document.getElementById("diemtb12");
 					var dkk = document.getElementById("diemkhuyenkhich");
 					var dut = document.getElementById("diemuutien");
+					var diemliet = 1.2;
 
+				// var b1 = ((Number (diemtoan.value) + Number (diemvan.value) + Number (diemanh.value) + Number (diemtbth.value) + Number(dkk.value)) / 4 ) * 7;
+				// var ketqua =  ( b1 + ( Number(diemtb12.value) * 3)  / 10 ) + Number(dut.value);
+
+				// test3.innerHTML = "- Bạn đạt " + ketqua.toFixed(2) + " điểm";
 
 				var b1 = ((Number (diemtoan.value) + Number (diemvan.value) + Number (diemanh.value) + Number (diemtbth.value) + Number (dkk.value)) / 4 ) * 7;
-				var ketqua =  (b1 + (Number(diemtb12.value) * 3)) / 10 + Number (dut.value);
+				var ketqua =  (b1 + ( Number(diemtb12.value) * 3)) / 10 + Number (dut.value);
 
-				test3.innerHTML = ketqua.toFixed(2) + " điểm";
-			}
+				test3.innerHTML = "- Bạn đạt " + ketqua.toFixed(2) + " điểm";
+
+				if (diemtoan.value >= 1.2) {
+					if (ketqua > 5) {
+						loinoi.innerHTML = "- Chúc mừng! Bạn đã đậu tốt nghiệp :))";
+					}
+					else {
+						loinoi.innerHTML = "- Bạn đã bị điểm liệt T-T";
+					}
+				}
+		}
 		</script>
 
 		<div class="form-nhapdiem">
@@ -114,8 +128,32 @@
     				<input type="checkbox" class="form-check-input" id="exampleCheck1">
     				<label class="form-check-label" for="exampleCheck1">Check me out</label>
   				</div> -->
-  				<button type="button" onclick="diemtn()" class="btn btn-primary">Kết quả</button>
-  				<div id="test3"></div>
+  				<button type="button" onclick="diemtn()" class="btn btn-primary" data-toggle="modal" data-target="#modalkq">Kết quả</button>
+  				<button type="button" onclick="" class="btn btn-primary">Tính lại</button>
+				
+				<!-- Modal -->
+				<div class="modal fade" id="modalkq" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  					<div class="modal-dialog modal-dialog-centered" role="document">
+    					<div class="modal-content">
+      						<div class="modal-header">
+        						<h5 class="modal-title" id="exampleModalLongTitle">Kết quả</h5>
+        						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          							<span aria-hidden="true">&times;</span>
+        						</button>
+      						</div>
+      						<div class="modal-body">
+      							<!-- hiện điểm -->
+        						<div id="test3"></div>
+        						<div id="loinoi"></div>
+      						</div>
+      						<div class="modal-footer">
+        						<button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+        						<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      						</div>
+    					</div>
+  					</div>
+				</div>
+  				<!-- <div id="test3"></div> -->
   				
 
 			</form>
