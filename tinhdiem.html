@@ -35,19 +35,6 @@
 
 		<script type="text/javascript">
 			
-			function tinhtong()
-				{
-					// khai báo biến và gán giá trị cho biến
-					var diemtoan = document.getElementById("diemtoan");
-					var diemvan = document.getElementById("diemvan");
-					var diemanh = document.getElementById("diemanh");
-					// Tính tổng 3 môn
-					var tong = (Number (diemtoan.value) + Number (diemvan.value) + Number (diemanh.value)) / 3;
-
-					xuattong.innerHTML = tong.toFixed(2);
-				
-				}
-
 			function diemtn() {
 				// khai báo biến và gán giá trị cho biến
 					var diemtoan = document.getElementById("diemtoan");
@@ -60,9 +47,9 @@
 
 
 				var b1 = ((Number (diemtoan.value) + Number (diemvan.value) + Number (diemanh.value) + Number (diemtbth.value) + Number (dkk.value)) / 4 ) * 7;
-				var b2 =  (b1 + (Number(diemtb12.value) * 3)) / 10 + Number (dut.value);
+				var ketqua =  (b1 + (Number(diemtb12.value) * 3)) / 10 + Number (dut.value);
 
-				test3.innerHTML = b2.toFixed(2) + " điểm";
+				test3.innerHTML = ketqua.toFixed(2) + " điểm";
 			}
 		</script>
 
@@ -89,9 +76,9 @@
       					<label for="diemanh">Điểm TBM Tổ Hợp TN - XH</label>
       					<input type="number" class="form-control" id="diemtbth">
     				</div>
-					<div class="col-3">
+					<!-- <div class="col-3">
 						<button style="margin-top: 25%;" type="button" onclick="" class="btn btn-primary">Tính điểm</button>
-					</div>
+					</div> -->
   				</div>
   				<div class="form-row">
   					<div class="form-group col-12">
@@ -127,11 +114,7 @@
     				<input type="checkbox" class="form-check-input" id="exampleCheck1">
     				<label class="form-check-label" for="exampleCheck1">Check me out</label>
   				</div> -->
-  				<button type="button" onclick="tinhtong()" class="btn btn-primary">Kết quả</button>
-  				<button type="button" onclick="diemtn()" class="btn btn-primary">Test</button>
-  				<div id="xuattong"></div>
-  				<div id="test1"></div>
-  				<div id="test2"></div>
+  				<button type="button" onclick="diemtn()" class="btn btn-primary">Kết quả</button>
   				<div id="test3"></div>
   				
 
