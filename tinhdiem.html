@@ -19,13 +19,23 @@
 	<!-- Code Css -->
 	<style type="text/css">
 		h3.name-title { color: green; text-align: center;}
-		.form-nhapdiem { width: 97%; margin: auto; margin-top: 10px; background-color: white; border: 1px solid black; border-radius: 10px;}
+		.form-nhapdiem { width: 97%; margin: auto; margin-top: 10px; background-color: white; border: 1px solid black; border-radius: 20px;}
 
 		form {
 			padding:15px 0px 15px;
 			width: 95%;
 			margin: auto;
 		}
+
+		/* Ô kết quả */
+		div#test3 {
+			text-align: center;
+			color: red;
+			font-weight: bold;
+			font-size: 25px;
+		}
+		div.form-group-1 {padding: 10px;}
+
 
 	</style>
 
@@ -54,23 +64,53 @@
 				var b1 = ((Number (diemtoan.value) + Number (diemvan.value) + Number (diemanh.value) + Number (diemtbth.value) + Number (dkk.value)) / 4 ) * 7;
 				var ketqua =  (b1 + ( Number(diemtb12.value) * 3)) / 10 + Number (dut.value);
 
-				test3.innerHTML = "- Bạn đạt " + ketqua.toFixed(2) + " điểm";
+				test3.innerHTML =  ketqua.toFixed(2) + " điểm";
 
-				if (diemtoan.value >= 1.2) {
-					if (ketqua > 5) {
-						loinoi.innerHTML = "- Chúc mừng! Bạn đã đậu tốt nghiệp :))";
+					if (ketqua >= 5.00) {
+						loinoi.innerHTML = "- Chúc mừng! Bạn đã đậu tốt nghiệp ☺";
 					}
 					else {
 						loinoi.innerHTML = "- Bạn đã bị điểm liệt T-T";
 					}
-				}
 		}
+		// end function diemtn
+		// Ẩn hiện điểm từng môn
+			function diemtungmon() {
+				var diemtungmon = document.getElementById("diemtungmon");
+				if (diemtungmon.style.display === "none") {
+					diemtungmon.style.display = "block";
+				} else {
+					diemtungmon.style.display = "none";
+				}
+			}
+		// Điểm tb 3 môn tổ hợp
+			function diemtb3mon() {
+				var diemmon1 = document.getElementById("diemmon1");
+				var diemmon2 = document.getElementById("diemmon2");
+				var diemmon3 = document.getElementById("diemmon3");
+
+				var diemtb3mon = (Number (diemmon1.value) + Number (diemmon2.value) + Number (diemmon3.value)) / 3;
+
+				document.getElementById("diemtbth").value = diemtb3mon.toFixed(2);
+				// diemtbth.innerHTML = diemtb3mon.toFixed(2);
+			}
+		// Reset
+			function reset() {
+				document.getElementById("form-nhapdiem").reset();
+			}
+		
 		</script>
 
-		<div class="form-nhapdiem">
+		<div class="form-nhapdiem" id="form-nhapdiem">
 			<!-- <h3 class="name-title"> Tool tính điểm </h3> -->
 
 			<form>
+				<div class="alert alert alert-success alert-dismissible fade show" role="alert">
+  					<b>Chú ý:</b> Điểm dưới 1.2 thì liệt rồi ☺ không cần tính đâu. [/ Lười viết code ]!
+  					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    					<span aria-hidden="true">&times;</span>
+  					</button>
+				</div>
 				<div class="form-row">
     				<div class="form-group col-4">
       					<label for="diemtoan">Điểm Toán</label>
@@ -85,14 +125,37 @@
       					<input type="number" class="form-control" id="diemanh">
     				</div>
   				</div>
+  				<!-- Điểm TB THTN -->
   				<div class="form-row">
   					<div class="form-group col-9">
-      					<label for="diemanh">Điểm TBM Tổ Hợp TN - XH</label>
+      					<label for="diemanh">Điểm TBM Tổ Hợp TN - XH </label>
       					<input type="number" class="form-control" id="diemtbth">
     				</div>
-					<!-- <div class="col-3">
-						<button style="margin-top: 25%;" type="button" onclick="" class="btn btn-primary">Tính điểm</button>
-					</div> -->
+					<div class="col-3">
+						<button style="margin-top: 25%;" type="button" onclick="diemtungmon()" class="btn btn-primary">Thêm</button>
+					</div>
+  				</div>
+  				<!-- Nhập điểm từng môn -->
+  				<div id="diemtungmon" style="width: 93%; background-color: #00FF99; margin: auto;border-radius: 15px; margin-bottom: 6px; display: none;">
+					<div class="form-group-1 row">
+    					<label for="" class="col-7 col-form-label">Sử hoặc Hoá</label>
+    					<div class="col-5">
+      						<input type="number" class="form-control" id="diemmon1">
+    					</div>
+  					</div>
+  					<div class="form-group-1 row">
+    					<label for="" class="col-7 col-form-label">Địa hoặc Lí</label>
+    					<div class="col-5">
+      						<input type="number" class="form-control" id="diemmon2">
+    					</div>
+  					</div>
+  					<div class="form-group-1 row">
+    					<label for="" class="col-7 col-form-label">CD hoặc Sinh</label>
+    					<div class="col-5">
+      						<input type="number" class="form-control" id="diemmon3">
+    					</div>
+  					</div>
+  					<button style="margin: 10px;" type="button" onclick="diemtb3mon()" class="btn btn-danger">Tính điểm trung bình</button>
   				</div>
   				<div class="form-row">
   					<div class="form-group col-12">
@@ -129,7 +192,7 @@
     				<label class="form-check-label" for="exampleCheck1">Check me out</label>
   				</div> -->
   				<button type="button" onclick="diemtn()" class="btn btn-primary" data-toggle="modal" data-target="#modalkq">Kết quả</button>
-  				<button type="button" onclick="" class="btn btn-primary">Tính lại</button>
+  				<button type="button" onclick="reset()" class="btn btn-primary">Tính lại</button>
 				
 				<!-- Modal -->
 				<div class="modal fade" id="modalkq" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
