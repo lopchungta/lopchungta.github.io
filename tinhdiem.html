@@ -36,6 +36,16 @@
 		}
 		div.form-group-1 {padding: 10px;}
 
+	/* footer */
+		div.footer { padding: 10px; background-color: teal; height: 60px; color: white; border-radius: 15px; margin-top: 7px;}
+		p.textinfo { color: white; font-size: 12px; text-align: center; margin: auto;}
+		p.textinfo a { color: #00FA9A; text-decoration: none; }
+	
+	/* Img */
+	div#img img {
+		width: 100%;
+	}
+
 
 	</style>
 
@@ -68,9 +78,11 @@
 
 					if (ketqua >= 5.00) {
 						loinoi.innerHTML = "- Chúc mừng! Bạn đã đậu tốt nghiệp 🥳";
+						img.innerHTML = "<img src='https://media0.giphy.com/media/dvCp8TWWllTj5QGmQj/giphy.gif?cid=ecf05e47cab17a32e4cebd847f5ee96371fcf25ea2f3be1f&rid=giphy.gif'>";
 					}
 					else {
 						loinoi.innerHTML = "- Bạn đã bị điểm liệt 😔☠";
+						img.innerHTML = "<img src='https://media1.giphy.com/media/TW8Ma1a8ZsZ8I/giphy.gif?cid=ecf05e4787139ec88959c7eb4183a0985c98dcd9da96e7a6&rid=giphy.gif'>";
 					}
 		}
 		// end function diemtn
@@ -193,6 +205,13 @@
   				</div> -->
   				<button type="button" onclick="diemtn()" class="btn btn-primary" data-toggle="modal" data-target="#modalkq">Kết quả</button>
   				<button type="button" onclick="reset()" class="btn btn-primary">Tính lại</button>
+
+  				<div class="footer">
+					<div class="info">
+						<p class="textinfo"> <i class="fas fa-code"></i> Code & Design by <a href="https://www.facebook.com/trungkhiem.z/" target="_blank"> Trung Khiêm </a> <br>
+  						<i class="fas fa-graduation-cap"></i> Trường THPT Vân Canh -  &copy;2020 </p>
+					</div>
+                </div>
 				
 				<!-- Modal -->
 				<div class="modal fade" id="modalkq" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -207,7 +226,8 @@
       						<div class="modal-body">
       							<!-- hiện điểm -->
         						<div id="test3"></div>
-        						<div id="loinoi"></div>
+        						<div id="loinoi"></div> <br>
+        						<div id="img"></div>
       						</div>
       						<div class="modal-footer">
         						<button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
