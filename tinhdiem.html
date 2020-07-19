@@ -18,11 +18,19 @@
 
 	<!-- Code Css -->
 	<style type="text/css">
+
 		body {
 			background-color: #33CCFF;
 		}
+
+		@media only screen and (max-width: 480px) {
+			
+		/* code css */
+
+		}
+		
 		h3.name-title { color: green; text-align: center;}
-		.form-nhapdiem { width: 97%; margin: 10px auto; background-color: white; border: 1px solid white; border-radius: 20px;}
+		.form-nhapdiem { width: 90%; margin: 25px auto; background-color: white; border: 1px solid white; border-radius: 20px;}
 
 		form {
 			padding:15px 0px 15px;
@@ -182,7 +190,7 @@
 				<div class="form-row">
 					<div class="form-group col-6">
       					 <label for="diemkhuyenkhich">Điểm khuyến khích</label>
-    						<select class="form-control" id="diemkhuyenkhich" onchange="dkk()">
+    						<select class="form-control" id="diemkhuyenkhich">
       							<option selected="selected" value="0">0</option>
 						      	<option value="1">1</option>
 						      	<option value="1.5">1.5</option>
@@ -245,35 +253,6 @@
 
 			</form>
 
-			
-			<!-- <div class="nhapdiem">
-				<div class="input-group mb-3">
-	  				<div class="input-group-prepend">
-	    				<span class="input-group-text" id="basic-addon1">Toán</span>
-	  				</div>
-	  				<input type="number" id="diemtoan" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
-				</div>
-			</div>
-
-			<div class="nhapdiem">
-				<div class="input-group mb-3">
-	  				<div class="input-group-prepend">
-	    				<span class="input-group-text" id="basic-addon1">Văn</span>
-	  				</div>
-	  				<input type="number" id="diemvan" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
-				</div>
-			</div>
-
-			<div class="nhapdiem">
-				<div class="input-group mb-3">
-	  				<div class="input-group-prepend">
-	    				<span class="input-group-text" id="basic-addon1">Anh</span>
-	  				</div>
-	  				<input type="number" id="diemanh" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
-				</div>
-			</div> -->
-	
-			<!-- end nhập điểm -->
 		</div>
 
 </body>
