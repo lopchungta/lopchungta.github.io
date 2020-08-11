@@ -42,17 +42,10 @@
 /* content */
 	
 	/* Time - S */
-	div.time-s {
-		margin: 5px auto;
-		width: 95%;
-		/*border: 1px solid teal;*/
-		/*border-radius: 50px;*/
-		/*background-color: teal;*/
-		text-align: center;
-	}
-	span#time-s {
-		color: black;
-	}
+    #clockDiv {
+        padding-top: 5px;
+        text-align: center;
+    }
 
 	div.spandemnguoc { font-family: 'Roboto Slab', serif; text-align: center; margin-top: 10px;}
 
@@ -86,23 +79,48 @@
 /* Alert */
 	div.alert { width: 95%; margin: 10px auto 10px;}
 
+/* time new */
+.time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.time h2, .time p {
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+.time h2 {
+  font-size: 30px;
+  color: blue;
+}
+
+.time p {
+  font-size: 25px;
+}
+
+.sup-time {
+  font-weight: 300;
+}
 /* time */
-	.time{
+	/*.time{
 		padding: 5px 5px;
 		/*background-color: #F563E4;*/
 		/*border-radius: 30px;*/
 		/*border: 1px solid #F563E4;*/
-		text-transform: uppercase;
+		/*text-transform: uppercase;
 		width: 90%;
 		display: flex;
-		justify-content: center;
-	}
-	.middle{ margin-top: 10px; padding: 5px; color: black; margin: auto; text-align: center;}
+		justify-content: center;*/
+	/*}*/
+	/*.middle{ margin-top: 10px; padding: 5px; color: black; margin: auto; text-align: center;}
 	.middle span { -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black;}
 	.time span{padding: 0 14px; font-size: 10px;}
-	.time span div{font-size: 40px;}
+	.time span div{font-size: 40px;}*/
 
-	#carouselExampleIndicators { width: 96%; margin: auto;}
+	#carouselExampleIndicators { width: 95%; margin: auto;}
 	
     /* Thẻ Tâm Sự */
     .the-tamsu {
@@ -491,6 +509,8 @@
 
 
 /* List Thành Viên */
+li.nav-item {width: 25%;}
+li.nav-item a {text-align: center;}
 .item-xom {
     /*background-color: green;*/
     border-top: 1px solid blue;
