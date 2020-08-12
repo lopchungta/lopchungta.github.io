@@ -35,19 +35,22 @@
 }
 
 /* header */
-	div.header { padding: 10px; background-color: teal; height: 50px;}
+	div.header { padding: 10px; background-color: teal; height: 73px;}
 	span.lop-left { font-size: 20px; color: white; float: left; font-family: 'Pacifico', cursive; margin-left: 10px;}
 	span.lop-right { font-size: 20px; color: white; float: right; font-family: 'Roboto Slab', serif; margin-right: 10px;}
+    #clockDiv {
+        margin: auto;
+        width: 100%;
+        margin-left: 10px;
+        color: white;
+    }
 
 /* content */
 	
 	/* Time - S */
-    #clockDiv {
-        padding-top: 5px;
-        text-align: center;
-    }
 
-	div.spandemnguoc { font-family: 'Roboto Slab', serif; text-align: center; margin-top: 10px;}
+
+	div.spandemnguoc { font-family: 'Pacifico', cursive; text-align: center; margin-top: 10px;}
 
     /* Post đăng */
     .post-dang {
