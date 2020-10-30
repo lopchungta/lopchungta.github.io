@@ -556,7 +556,7 @@ div.gachngang { margin: 10px; border-top: 2px #00BFFF solid;}
 .hidden {display: none;}
 
 /* Chrome, Safari, Opera */ 
-@-webkit-keyframes xoayvong{
+@-webkit-keyframes xoayvong {
 	from{
 	        -webkit-transform:rotate(0deg);
 	        -moz-transform:rotate(0deg);
